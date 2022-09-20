@@ -30,6 +30,12 @@ Enter type of file to delete :
 Enter type of file: .DS_Store
 ```
 
+or to delete all `.log` files :
+
+```txt
+Enter type of file: *.log
+```
+
 All `.DS_Store` files will be selected and you'll be prompt with 3 choices :
 
 - `Y` - Lauch deletion
