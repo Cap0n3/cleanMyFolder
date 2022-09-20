@@ -4,7 +4,7 @@ Small powershell script that goes recursivly through any given folder and its su
 
 All selected files will be listed and you'll be prompted files before deleting anything. If you're not sure you can even do a quick test (A "WhatIf") just to be sure before lanching actual deletion.
 
-# Usage
+## Usage
 
 Set execution policy :
 
