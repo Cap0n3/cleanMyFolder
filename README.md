@@ -21,19 +21,19 @@ And launch script from folder :
 Enter absolute path of target folder :
 
 ```txt
-Enter absolute path to folder:  C:\Users\Kim\Documents\myFolder
+- Enter absolute path to folder:  C:\Users\Kim\Documents\myFolder
 ```
 
 Enter type of file to delete :
 
 ```txt
-Enter type of file: .DS_Store
+- Enter type of file: .DS_Store
 ```
 
 or to delete all `.log` files :
 
 ```txt
-Enter type of file: *.log
+- Enter type of file: *.log
 ```
 
 All `.DS_Store` files will be selected and you'll be prompt with 3 choices :
