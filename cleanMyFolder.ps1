@@ -8,12 +8,36 @@ Developed by: cap0n3
 #>
 
 # Prompt User for folder path and file type
-Write-Host "`n=== Welcome ! ===`n" -ForegroundColor Green
-$folder_path = Read-Host -Prompt "Enter absolute path to folder"
-$file_to_del =  Read-Host -Prompt "Enter type of file"
+Write-Host "`n=== Welcome to Clean My Folder script ! ===`n" -ForegroundColor Green
 
-# Get all requested files
-$all_files = Get-ChildItem -Path $folder_path -Force -Recurse -Filter $file_to_del
+# Check folder existence
+while($check_path -eq $null) {
+    $folder_path = Read-Host -Prompt "- Enter absolute path to folder"
+    if (!(Test-Path -Path $folder_path)) {
+        Write-Warning "'$($folder_path)' not found, check path please !"
+    } else  {
+        $check_path = $true 
+    }
+}
+
+# Check files existence
+while($check_file -eq $null) {
+    # Ask file type to delete & don't allow empty entry
+    while (!($file_to_del)) {
+        $file_to_del =  Read-Host -Prompt "- Enter type of file"
+        if (!($file_to_del)) {
+            Write-Warning "Please enter file type"
+        }
+    }
+    # Get all requested files
+    $all_files = Get-ChildItem -Path $folder_path -Force -Recurse -Filter $file_to_del
+    # Check if files are found
+    if ($(($all_files).count) -eq 0) {
+        Write-Warning "No files of type '$($file_to_del)' found at path '$($folder_path)'"
+    } else {
+        $check_file = $true
+    }  
+}
 
 # Message for user
 Write-Host "`n[INFO] $(($all_files).count) files to be deleted :`n" -ForegroundColor Magenta
@@ -44,7 +68,7 @@ if ($decision -eq 0) {
     Write-Host "`nDONE !`n" -ForegroundColor Green
 } 
 elseif ($decision -eq 1) {
-    Write-Host "`nLeaving script without deleting anything. Bye !`n" -ForegroundColor Green
+    Write-Host "`n[EXIT] Leaving script without deleting anything. Bye !`n" -ForegroundColor Green
 }
 elseif ($decision -eq 2) {
     # Simply test with WhatIf
