@@ -30,7 +30,7 @@ Enter type of file to delete :
 Enter type of file: .DS_Store
 ```
 
-All selected files will be selected and you'll prompt with 3 choices :
+All `.DS_Store` files will be selected and you'll be prompt with 3 choices :
 
 - `Y` - Lauch deletion
 - `N` - Exit script without deleting anything

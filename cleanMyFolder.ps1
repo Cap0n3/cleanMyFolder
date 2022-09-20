@@ -1,7 +1,8 @@
 <#
-Script: This script goes recursivly through any given folder and its sub-folders and deletes chosen type 
-of file (just one file, can be a hidden file too). You'll be prompt before deleting anything and can even 
-do a quick test (A "WhatIf") just to be sure before lanching deletion.
+Script: Small powershell script that goes recursivly through any given folder and its sub-folders and deletes 
+any chosen type of file (just one type at the time, it can be a hidden file too). All selected files will be 
+listed and you'll be prompted files before deleting anything. If you're not sure you can even do a quick test 
+(A "WhatIf") just to be sure before lanching actual deletion.
 
 Developed by: cap0n3
 #>
